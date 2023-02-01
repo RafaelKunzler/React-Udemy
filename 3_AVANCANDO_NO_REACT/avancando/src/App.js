@@ -3,13 +3,16 @@ import ListRender from './components/ListRender';
 import ConditionalRender from './components/ConditionalRender';
 import ShowUserName from './components/ShowUserName';
 import CarDetails from './components/CarDetails';
+import Fragment from './components/Fragment';
+import Container from './components/Container';
+
 
 import { useState } from 'react';
 
 import './App.css';
 
 function App() {
-  const name = "Joaquim"
+  //const name = "Joaquim"
   const [userName] = useState("Maria")
 
   const cars = [
@@ -39,6 +42,12 @@ function App() {
           km={car.km} 
           newCar={car.newCar}/>
       ))}
+      {/* fragment */}
+      <Fragment propFragment="teste" />
+      {/* children */}
+      <Container myValue="testing">
+        <p>E este é o conteúdo</p>
+      </Container>
     </div>
   );
 }
