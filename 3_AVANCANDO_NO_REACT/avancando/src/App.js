@@ -8,6 +8,7 @@ import Container from './components/Container';
 import ExecuteFunction from './components/ExecuteFunction';
 import Message from './components/Message';
 import ChangeMessageState from './components/ChangeMessageState';
+import PeopleDetails from './components/PeopleDetails';
 
 
 import { useState } from 'react';
@@ -22,6 +23,13 @@ function App() {
     {id: 1, brand: "Ferrari", color: "Amarela", newCar: true, km: 0},
     {id: 2, brand: "KIA", color: "Branco", newCar: false, km: 8567},
     {id: 3, brand: "Renault", color: "Azul", newCar: false, km: 234}
+  ]
+
+  const people = [
+    {id: 1, name: "Rafael", age: 26, job: "Programador"},
+    {id: 2, name: "João", age: 37, job: "Jardineiro"},
+    {id: 1, name: "Maria", age: 15, job: "Estudante"},
+
   ]
 
   function showMessage(){
@@ -66,7 +74,15 @@ function App() {
       <ExecuteFunction myFunction={showMessage} />
       {/* state lift */}
       <Message msg={message}/>
-      <ChangeMessageState handleMessage={handleMessage} />    
+      <ChangeMessageState handleMessage={handleMessage} />   
+      {people.map((people) => (
+        <PeopleDetails 
+          key={people.id}
+          name={people.name}
+          age={people.age}
+          job={people.job}
+        />
+      ))}
     </div>
   );
 }
