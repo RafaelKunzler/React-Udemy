@@ -8,6 +8,8 @@ function App() {
   const n = 15;
   const [name] = useState("Rafael")
 
+  const redTitle = false;
+
   return (
     <div className="App">
       {/* css global */}
@@ -27,6 +29,10 @@ function App() {
       </h2>
       <h2 style={name === "Rafael" ? ({color: "green", backgroundColor: "#000"}) : (null)}>
         Teste nome      
+      </h2>
+      {/* classe dinamica */}
+      <h2 className={redTitle ? "red-title" : "title"}>
+        Este titulo vai ter classe dinamica
       </h2>
     </div>
   );
