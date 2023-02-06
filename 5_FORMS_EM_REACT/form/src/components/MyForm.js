@@ -14,8 +14,12 @@ const MyForm = ({user}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Enviando o formulario")
-        console.log(name, email)
+        console.log("Enviando o formulario");
+        console.log(name, email);
+
+        // 7 - limpar form
+        setName("");
+        setEmail("");
     }
 
     //console.log(name)
