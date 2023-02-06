@@ -12,6 +12,7 @@ const MyForm = () => {
     }
 
     console.log(name)
+    console.log(email)
 
   return (
     <div>
@@ -19,12 +20,20 @@ const MyForm = () => {
         <form>
             <div>
                 <label htmlFor="name">Nome:</label>
-                <input type="text" name="name" placeholder="Digite o seu nome" onChange={handleName}/>
+                <input 
+                    type="text" 
+                    name="name" 
+                    placeholder="Digite o seu nome" 
+                    onChange={handleName}/>
             </div>
             {/* label envolvelndo input */}
             <label>
                 <span>Email:</span>
-                <input type="email" name="email" placeholder="Digite o seu email" />
+                <input 
+                    type="email" 
+                    name="email" 
+                    placeholder="Digite o seu email" 
+                    onChange={(e) => setEmail(e.target.value)} />
             </label>
             <input type="submit" value="Enviar"/>
         </form>
