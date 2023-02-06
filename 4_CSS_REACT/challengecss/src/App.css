@@ -1,0 +1,20 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue";  
+}
+
+.Cards {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  padding: 32px;
+  gap: 32px;
+}
+
+.Title {
+  font-family: "Courier New";
+  text-align: center;
+  padding: 36px;
+  color: #212427;
+}

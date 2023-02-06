@@ -1,0 +1,41 @@
+.car_details_card {
+    display: flex;    
+    justify-content: center;     
+    align-items: center;
+    padding: 32px;
+    gap: 32px;
+    width: 450px;
+    background-color: #87A0B2;
+    border-top-left-radius: 32px;
+    border-bottom-left-radius: 32px;
+    border-top: 6px solid #A4BEF3;
+    
+}
+
+.car_img { 
+    border-top-left-radius: 64px;
+    border-bottom-left-radius: 64px;
+    border-top: 6px solid #212427;
+}
+
+.car_title{ 
+    color: #212427;
+}
+
+.car_details {
+    color: #212427;
+}
+
+.buy_car {
+    border: none;
+    border-radius: 24px;
+    padding: 12px;
+    width: 128px;
+    font-size: 18px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
