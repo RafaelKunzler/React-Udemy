@@ -44,13 +44,18 @@ function App() {
   // start secret word game  
   const startGame = () => {
     // pick word and category
-    const { word, category } = pickWordAndCategory()
+    const { word, category } = pickWordAndCategory();
 
     //create an array of letters
-    let wordLetters = word.split('')
-    wordLetters = wordLetters.map((l) => l.toLowerCase())
+    let wordLetters = word.split('');
+    wordLetters = wordLetters.map((l) => l.toLowerCase());
 
     console.log(word, category, wordLetters)
+
+    // fill states
+    setPickesWord(word);
+    setPicketCategory(category);
+    setLetters(letters)
 
     setGameStage(stages[1].name);
   }
