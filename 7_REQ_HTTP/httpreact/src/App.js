@@ -36,8 +36,14 @@ function App() {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(product)
-    })
+    });
 
+    // 3 - carregamento dinâmico
+    const addProduct = await res.json();
+    setProducts((prevProducts) => [...prevProducts, addProduct]);
+
+    setName("");
+    setPrice("");
   };
 
 
