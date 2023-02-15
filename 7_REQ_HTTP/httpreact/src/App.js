@@ -10,10 +10,12 @@ function App() {
   const [products, setProducts] = useState([]);
 
   // 4 - custom hooks
-  const { data: items, httpConfig, loading } = useFetch(url)
+  const { data: items, httpConfig, loading, error } = useFetch(url)
 
   const [name, setName] = useState([]);
   const [price, setPrice] = useState([]);
+
+  const [itemUrl, setItemUrl] = useState([]);
   
 
   // 1 - resgatando dados
@@ -55,17 +57,32 @@ function App() {
     setPrice("");
   };
 
+  const handleRemoveProduct = async (e) => {  
+    console.log(e.target.id)
+    e.preventDefault();     
+    const res = url + "/" + e.target.id
+    console.log(res)
+    httpConfig(res, "DELETE")    
+    
+  };
+
 
   return (
     <div className="App">
       <h1>Lista de Produtos</h1>
       {/* 6 - loading */}
       {loading && <p>Carregando Dados</p>}
-      {!loading && (
+      {error && <p>{error}</p>}
+      {!error && (
         <ul>
         {items && items.map((product) => (
           <li key={product.id}>
             {product.name} - R${product.price}
+            <button 
+              onClick={handleRemoveProduct} 
+              id={product.id}>
+                Remover
+            </button>
           </li>
         ))}
       </ul>
