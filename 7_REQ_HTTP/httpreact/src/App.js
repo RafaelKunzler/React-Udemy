@@ -60,8 +60,7 @@ function App() {
   const handleRemoveProduct = async (e) => {  
     console.log(e.target.id)
     e.preventDefault();     
-    const res = url + "/" + e.target.id
-    console.log(res)
+    const res = url + "/" + e.target.id    
     httpConfig(res, "DELETE")    
     
   };

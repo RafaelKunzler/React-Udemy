@@ -26,9 +26,7 @@ export const useFetch = (url, itemUrl) => {
                 body: JSON.stringify(data),
             });            
             setMethod(method)
-        }   
-        
-        if ( method === "DELETE"){
+        } else if ( method === "DELETE"){
             setConfig({
                 method,                
             });
@@ -85,6 +83,8 @@ export const useFetch = (url, itemUrl) => {
     }, [config, method, url])
 
     // 8 - exclundo itens
+    // poderia ter colocado esse bloco no 
+    // useEffect da httpRequest
     useEffect(() => {
         const removeItem = async () => {
             if(method === 'DELETE'){        
