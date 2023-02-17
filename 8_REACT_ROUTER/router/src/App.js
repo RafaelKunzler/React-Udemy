@@ -1,5 +1,13 @@
 import './App.css';
+
 import { useFetch } from './hooks/useFetch';
+
+// pages
+import Home from './pages/Home';
+import About from './pages/About';
+
+// 1 - config react router
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 const url = "http://localhost:3000/products"
 
@@ -16,6 +24,12 @@ function App() {
             </li>
           ))}
       </ul>
+      <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+          </Routes>
+      </BrowserRouter>
     </div>
   );
 }
