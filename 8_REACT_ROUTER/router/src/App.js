@@ -19,15 +19,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Lista de Produtos</h1>
-      <ul>
-        {items && items.map((product) => (
-            <li key={product.id}>
-              {product.name} - R${product.price}
-            </li>
-          ))}
-      </ul>
+      <h1>Lista de Produtos</h1>      
       <BrowserRouter>
+          {/*2 - links com react router*/}
           <Navbar />
           <Routes>
             <Route path='/' element={<Home />} />
