@@ -59,8 +59,7 @@ export const useInsertDocument = (docCollection) => {
       checkCancelBeforeDispatch({ 
         type: "ERROR", 
         payload: error.message,      
-      });
-      console.log("ocorreu um erro: " + error);
+      });      
     }    
   };
 

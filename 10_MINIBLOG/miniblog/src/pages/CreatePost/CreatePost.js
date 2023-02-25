@@ -14,7 +14,7 @@ const CreatePost = () => {
 
   const { user } = useAuthValue();
 
-  const { insertDocument, response } = useInsertDocument();
+  const { insertDocument, response } = useInsertDocument("posts");
 
   const handleSubmit = (e) => {
     e.preventDefault();
