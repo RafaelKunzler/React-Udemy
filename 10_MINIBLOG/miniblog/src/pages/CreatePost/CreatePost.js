@@ -45,10 +45,12 @@ const CreatePost = () => {
       createdBy: user.displayName,
     });
 
+    console.log(response)
+
     // redirect to home page
   }
 
-
+  
 
   return (
     <div className={styles.create_post}>
@@ -111,5 +113,7 @@ const CreatePost = () => {
     </div>
   )
 }
+
+
 
 export default CreatePost
